@@ -12,10 +12,8 @@ hash = {
   november:   30, 
   december:   31
 }
-hash.each do |key, value|
-  if value == 30
-    puts key
-  end
+hash.each do |month, days|
+  puts month if days == 30 
 end
 
 # 2. Заполнить массив числами от 10 до 100 с шагом 5
@@ -34,33 +32,23 @@ print array
 
 #3. Заполнить массив числами фибоначчи до 100
 
-array2 = []
-i = 2
-x = 0
-y = 1
-array2.push(x)
-array2.push(y)
+array2 = [0,1]
 s = 0
 while s < 100
-  s = array2[i - 2] + array2[i - 1]
+  s = array2[-2] + array2[-1]
   if s < 100
     array2.push(s)
-  i += 1
   end
 end
 print array2
 
 #4. Заполнить хеш гласными буквами, где значением будет являтся порядковый номер буквы в алфавите (a - 1).
-hash2 = {
-  а: 1,
-  е: 2,
-  ё: 3,
-  и: 4,
-  о: 5,
-  у: 6,
-  ы: 7,
-  э: 8,
-  ю: 9,
-  я: 10 	
-}
-print hash2
+#array3 = ['a','е','ё','и','о','у','ы','э','ю','я']
+array3 = ['a','e','i','o','u','y']
+array4 = ('a'..'z').to_a
+hash = {}
+i = 0
+for i in i..array3.length
+  hash[array3[i]] = array4.index(array3[i])+1 if array4.include?(array3[i]) 
+end
+print hash

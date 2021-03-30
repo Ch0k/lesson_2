@@ -1,4 +1,4 @@
-hash = Hash.new
+hash = []
 cart = 0
 loop do
   puts 'Введите товар'
